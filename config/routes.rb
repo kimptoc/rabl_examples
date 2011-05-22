@@ -5,6 +5,7 @@ RablExamples::Application.routes.draw do
   resources :cars
 
   match 'cars/car_check/:engine_size' => 'cars#car_check'
+  match 'garage' => 'cars#garage'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

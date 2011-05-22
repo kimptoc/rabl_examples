@@ -1,4 +1,14 @@
 class CarsController < ApplicationController
+
+  def car_check
+    @cars = Car.where("engine_size > ?", Integer(params[:engine_size]))
+    @message = "None found" unless @cars.present?
+  end
+
+  def garage
+    @garage = Garage.new
+  end
+
   # GET /cars
   # GET /cars.xml
   def index
@@ -9,11 +19,6 @@ class CarsController < ApplicationController
 #      format.xml  { render }
 #      format.json  { render }
 #    end
-  end
-
-  def car_check
-    @cars = Car.where("engine_size > ?", Integer(params[:engine_size]))
-    @message = "None found" unless @cars.present?
   end
 
   # GET /cars/1
