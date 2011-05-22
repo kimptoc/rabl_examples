@@ -46,44 +46,47 @@ class CarsController < ApplicationController
   # POST /cars
   # POST /cars.xml
   def create
-    @car = Car.new(params[:car])
-
-    respond_to do |format|
-      if @car.save
-        format.html { redirect_to(@car, :notice => 'Car was successfully created.') }
-        format.xml  { render :xml => @car, :status => :created, :location => @car }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @car.errors, :status => :unprocessable_entity }
-      end
-    end
+    #disable create for now
+#    @car = Car.new(params[:car])
+#
+#    respond_to do |format|
+#      if @car.save
+#        format.html { redirect_to(@car, :notice => 'Car was successfully created.') }
+#        format.xml  { render :xml => @car, :status => :created, :location => @car }
+#      else
+#        format.html { render :action => "new" }
+#        format.xml  { render :xml => @car.errors, :status => :unprocessable_entity }
+#      end
+#    end
   end
 
   # PUT /cars/1
   # PUT /cars/1.xml
   def update
-    @car = Car.find(params[:id])
-
-    respond_to do |format|
-      if @car.update_attributes(params[:car])
-        format.html { redirect_to(@car, :notice => 'Car was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @car.errors, :status => :unprocessable_entity }
-      end
-    end
+    #disable update for now
+#    @car = Car.find(params[:id])
+#
+#    respond_to do |format|
+#      if @car.update_attributes(params[:car])
+#        format.html { redirect_to(@car, :notice => 'Car was successfully updated.') }
+#        format.xml  { head :ok }
+#      else
+#        format.html { render :action => "edit" }
+#        format.xml  { render :xml => @car.errors, :status => :unprocessable_entity }
+#      end
+#    end
   end
 
   # DELETE /cars/1
   # DELETE /cars/1.xml
   def destroy
-    @car = Car.find(params[:id])
-    @car.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(cars_url) }
-      format.xml  { head :ok }
-    end
+    #disable delete for now
+#    @car = Car.find(params[:id])
+#    @car.destroy
+#
+#    respond_to do |format|
+#      format.html { redirect_to(cars_url) }
+#      format.xml  { head :ok }
+#    end
   end
 end
