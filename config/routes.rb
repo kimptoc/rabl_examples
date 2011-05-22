@@ -1,4 +1,11 @@
 RablExamples::Application.routes.draw do
+
+  root :to => "cars#index"
+
+  resources :cars
+
+  match 'cars/car_check/:engine_size' => 'cars#car_check'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
