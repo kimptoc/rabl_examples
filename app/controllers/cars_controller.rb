@@ -3,6 +3,8 @@ class CarsController < ApplicationController
   def car_check
     @cars = Car.where("engine_size > ?", Integer(params[:engine_size]))
     @message = "None found" unless @cars.present?
+    flash[:notice] = "Flash notice message"
+
   end
 
   def garage
