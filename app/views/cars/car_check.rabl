@@ -5,7 +5,9 @@ child(@cars) { attribute :name}
 #node(:message, :if => lambda { |m| @message.present? }) { @message }
 #iterate through the flash messages
 node(:flash) do |f|
-  { :msg => flash[:msg], :name => flash[:name] }
+ flash.each_pair do |k, v|
+   { :msg => v, :name => k }
+ end
 end
 #helper now included ok, but helper call failing // undefined method `message' for false:FalseClass
 #helper RablHelper
